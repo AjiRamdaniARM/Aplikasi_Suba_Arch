@@ -25,8 +25,8 @@ Widget build(BuildContext context) {
       child:  Container(
           padding: EdgeInsets.all(20),
          child: Column(
-          mainAxisAlignment: MainAxisAlignment.start, 
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+          mainAxisSize: MainAxisSize.min,
           children:   [
           Container(
             margin: EdgeInsets.only(right: 100, top: 30),
@@ -85,25 +85,70 @@ Widget build(BuildContext context) {
   ,)),
 
 // get data wordpress
-  Container(
-    child: FutureBuilder(future: fetchWpPost(), builder: (context, snapshot){
-      if(snapshot.hasData){
-        return ListView.builder(
-          itemCount: snapshot.data?.length,
-          itemBuilder:(BuildContext context, int index) {
-            Map wppost = snapshot.data?[index];
-            return Column(
-              children: <Widget>[
-                  Text(wppost['title']['rendered'],)
-              ],
-            );
-          }
-        );
-      }
 
-      return CircularProgressIndicator();
-    }),
-  )
+
+   Expanded(
+     child: FutureBuilder(future: fetchWpPost(), builder: (context, snapshot){
+       if(snapshot.hasData){
+        return ListView.builder(
+           itemCount: snapshot.data?.length,
+           itemBuilder:(BuildContext context, int index) {
+            Map wppost = snapshot.data?[index];
+             return Column(
+               children: <Widget>[
+
+                Card(
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(children: <Widget>[
+
+                     ListTile(
+                  leading: Icon(Icons.arrow_drop_down_circle),
+                  title:   Text(
+              wppost['title']['rendered'],
+             ),
+                  subtitle: Text(
+                    wppost['date'],
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                  ],),
+                )
+               
+//                Container(
+//                 width: MediaQuery.of(context).size.width,
+//                 height: 100 ,
+//     margin: EdgeInsets.all(10),
+//     child: Card(
+    
+//       shape: RoundedRectangleBorder(
+        
+//         borderRadius: BorderRadius.circular(10.0),
+//       ),
+//       child: Container(
+//         padding: EdgeInsets.all(10),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: <Widget>[
+//             Text(
+//               wppost['title']['rendered'],
+//               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//             ),
+//             // You can add more widgets here for displaying more data
+//           ],
+//         ),
+//       ),
+//     ),
+//  ),
+                  
+               ],
+             );
+           }
+         );
+       }
+
+       return CircularProgressIndicator();
+     }),
+   )
 
        ]),
         )
