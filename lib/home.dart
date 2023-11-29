@@ -24,10 +24,7 @@ Widget build(BuildContext context) {
       height: MediaQuery.of(context).size.height,
       child:  Container(
         padding: EdgeInsets.all(10),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Stack(
         children:   [
           Container(
             margin: EdgeInsets.only(right: 100, top: 30),
@@ -76,7 +73,9 @@ Widget build(BuildContext context) {
           ),
 
           // element 3
-  Expanded(child: 
+  Container(
+    margin: EdgeInsets.only(top: 140),
+    child: 
                  PageView.builder(
                 itemCount: 3,
                 pageSnapping: true,
@@ -100,16 +99,18 @@ Widget build(BuildContext context) {
                 }),
   ),
   Expanded(child: Container(
-    margin: EdgeInsets.all(15),
+    margin: EdgeInsets.only(top: 345, left: 20),
     child: 
-  Text("Blogger", style: TextStyle(
+  Text("Blogger", textAlign: TextAlign.center,style: TextStyle(
     fontWeight: FontWeight.bold,
     fontFamily: 'Montserrat'
     ),)
   ,)),
 
   // get data wordpress
-   Expanded(
+   Container(
+    margin: EdgeInsets.only(top: 400),
+    height: MediaQuery.of(context).size.height,
      child: FutureBuilder(future: fetchWpPost(), builder: (context, snapshot){
        if(snapshot.hasData){
         return ListView.builder(
@@ -118,11 +119,10 @@ Widget build(BuildContext context) {
             Map wppost = snapshot.data?[index];
              return Column(
                children: <Widget>[
-
                 Card(
                   clipBehavior: Clip.antiAlias,
-                  child: Column(children: <Widget>[
-
+                  child: Column(
+                    children: <Widget>[
                      ListTile(
                   leading: Icon(Icons.arrow_drop_down_circle),
                   title:   Text(
@@ -140,7 +140,7 @@ Widget build(BuildContext context) {
            }
          );
        }
-       return CircularProgressIndicator();
+       return Center(child: CircularProgressIndicator(),);
      }),
    ),
        ]),

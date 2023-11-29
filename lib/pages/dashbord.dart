@@ -61,26 +61,96 @@ List<dynamic> _item = [];
             Container(
   child: Stack(
     children: <Widget>[
+Container(
+   margin: EdgeInsets.only(right: 100, top: 30),
+   child: Stack(children: [
+    Container(
+                margin: EdgeInsets.all(10),
+                child: Text("Halaman",textAlign: TextAlign.start ,style:TextStyle(
+                fontSize: 15,
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+                fontFamily: 'Montserrat'
+                ),
+                )
+    ),
+
+  Container(
+              margin: EdgeInsets.only(top: 40),
+              child:
+              Column(
+                mainAxisAlignment:MainAxisAlignment.start ,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Text(" Referensi", textAlign: TextAlign.start,style: 
+               TextStyle(
+                color: Colors.amber[400],
+                fontSize: 30, 
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0,
+                height: 1,
+                fontFamily: 'Arial_Rounded'
+                ),),
+             Text(" Design Rumah", textAlign: TextAlign.start,style: 
+               TextStyle(
+                fontSize: 30, 
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0,
+                height: 1,
+                fontFamily: 'Arial_Rounded'
+                ),) 
+                ],
+              )
+             )
+                
+
+
+   ]),
+),
+      
+      Container(
+        margin: EdgeInsets.only(top: 150),
+        height: 600,
+        child: 
       _item.isNotEmpty
           ? ListView.builder(
               itemCount: _item.length,
               itemBuilder: (context, index) {
-                return Card(
+                return Container(
                   key: ValueKey(_item[index]["id"]),
                   margin: EdgeInsets.all(10),
                   child: Column(
                     children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(_item[index]["id"]),
-                      ),
+                      
+
+                      
                      Container(
-                      child:Image.asset(
-              _item[index]['link2'],
-              width: 100,
-              height: 100,
-              fit: BoxFit.cover,
+                      child:Image.network(
+              _item[index]['link1'],
+              width: MediaQuery.of(context).size.width ,
+              height: 200,
+           
             ),
+            
+                     ),
+
+                        Container(
+                      child:Image.network(
+              _item[index]['link2'],
+              width: MediaQuery.of(context).size.width ,
+              height: 200,
+           
+            ),
+            
+                     ),
+                        Container(
+                      child:Image.network(
+              _item[index]['link3'],
+              width: MediaQuery.of(context).size.width ,
+              height: 200,
+           
+            ),
+            
                      )
                     ],
                   ),
@@ -88,9 +158,9 @@ List<dynamic> _item = [];
               },
             )
           : Center(
-              child: Text("No items to display"),
+              child: CircularProgressIndicator(),
             ),
-    ],
+  )]
   ),
 )
 
