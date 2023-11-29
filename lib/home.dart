@@ -23,39 +23,59 @@ Widget build(BuildContext context) {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child:  Container(
-          padding: EdgeInsets.all(20),
-         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
-          mainAxisSize: MainAxisSize.min,
-          children:   [
+        padding: EdgeInsets.all(10),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+        children:   [
           Container(
             margin: EdgeInsets.only(right: 100, top: 30),
             child: Stack(children: <Widget>[
 
-              Container(child: Text("Welcome To",textAlign: TextAlign.start ,style:TextStyle(
-                fontSize: 20,
+              // element 1
+              Container(
+                margin: EdgeInsets.all(10),
+                child: Text("Welcome To",textAlign: TextAlign.start ,style:TextStyle(
+                fontSize: 15,
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
                 fontFamily: 'Montserrat'
                 ),),),
-
+                // element 2
              Container(
-              width: 200,
+         
               margin: EdgeInsets.only(top: 40),
               child:
-               Text("Suba Arch Studio Blog", textAlign: TextAlign.start,style: 
+              Column(
+                mainAxisAlignment:MainAxisAlignment.start ,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Text(" Suba Arch", textAlign: TextAlign.start,style: 
+               TextStyle(
+                color: Colors.amber[400],
+                fontSize: 35, 
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0,
+                height: 1,
+                fontFamily: 'Arial_Rounded'
+                ),),
+          Text(" Studio Blog", textAlign: TextAlign.start,style: 
                TextStyle(
                 fontSize: 35, 
                 fontWeight: FontWeight.bold,
                 letterSpacing: 0,
                 height: 1,
                 fontFamily: 'Arial_Rounded'
-                ),)
+                ),) 
+                ],
+              )
+              
                 ,),
-
-                
             ],) 
           ),
+
+          // element 3
   Expanded(child: 
                  PageView.builder(
                 itemCount: 3,
@@ -80,13 +100,15 @@ Widget build(BuildContext context) {
                 }),
   ),
   Expanded(child: Container(
+    margin: EdgeInsets.all(15),
     child: 
-  Text("Blogger")
+  Text("Blogger", style: TextStyle(
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Montserrat'
+    ),)
   ,)),
 
-// get data wordpress
-
-
+  // get data wordpress
    Expanded(
      child: FutureBuilder(future: fetchWpPost(), builder: (context, snapshot){
        if(snapshot.hasData){
@@ -112,8 +134,22 @@ Widget build(BuildContext context) {
                   ),
                 ),
                   ],),
-                )
-               
+                ),
+               ],
+             );
+           }
+         );
+       }
+       return CircularProgressIndicator();
+     }),
+   ),
+       ]),
+        )
+    )
+    );
+}
+}
+
 //                Container(
 //                 width: MediaQuery.of(context).size.width,
 //                 height: 100 ,
@@ -139,20 +175,3 @@ Widget build(BuildContext context) {
 //       ),
 //     ),
 //  ),
-                  
-               ],
-             );
-           }
-         );
-       }
-
-       return CircularProgressIndicator();
-     }),
-   )
-
-       ]),
-        )
-    )
-    );
-}
-}

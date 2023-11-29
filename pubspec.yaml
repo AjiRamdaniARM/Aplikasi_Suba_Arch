@@ -60,6 +60,7 @@ flutter:
     - assets/image/assets1.png
     - assets/image/assets2.png
     - assets/image/assets3.png
+    - assets/data-poto.json
   fonts:
     - family: Arial_Rounded
       fonts:

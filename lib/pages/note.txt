@@ -1,0 +1,70 @@
+Column(
+              children: <Widget>[
+              Container(
+                 margin: EdgeInsets.only(right: 100, top: 30),
+                child: Stack(children: <Widget>[
+                   Container(
+                margin: EdgeInsets.all(10),
+                child: Text("Halaman",textAlign: TextAlign.start ,style:TextStyle(
+                fontSize: 15,
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+                fontFamily: 'Montserrat'
+                ),),),
+                // element 2
+             Container(
+              margin: EdgeInsets.only(top: 40),
+              child:
+              Column(
+                mainAxisAlignment:MainAxisAlignment.start ,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Text(" Referensi", textAlign: TextAlign.start,style: 
+               TextStyle(
+                color: Colors.amber[400],
+                fontSize: 30, 
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0,
+                height: 1,
+                fontFamily: 'Arial_Rounded'
+                ),),
+             Text(" Design Rumah", textAlign: TextAlign.start,style: 
+               TextStyle(
+                fontSize: 30, 
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0,
+                height: 1,
+                fontFamily: 'Arial_Rounded'
+                ),) 
+                ],
+              )
+             )
+                ]),
+              ),
+
+
+
+              // Container(
+              //   child:Stack(children: <Widget>[
+              //     _item.isNotEmpty?
+              //     ListView.builder(
+              //       itemCount: _item.length,
+              //       itemBuilder: (context, index){
+              //         return Card(
+              //         key: ValueKey(_item[index]["id"]),
+              //         margin: EdgeInsets.all(10),
+              //         child:Stack(
+              //           children: <Widget>[
+              //             Text(_item[index]["id"]),
+              //             Image.asset(_item[index]["link1"]),
+              //             Image.asset(_item[index]["link2"]),
+              //             Image.asset(_item[index]["link3"])
+              //           ],
+              //         )
+              //         );
+              //       }) : 
+
+              //   ]) ,
+              // )
+              ],
+            )

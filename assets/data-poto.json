@@ -1,0 +1,16 @@
+{
+"items": [
+    {
+        "id": "1",
+        "link1": "https://portfolio.suba-arch.com/img/owners/pak-yudith/pak-yudith-1.jpg",
+        "link2": "https://portfolio.suba-arch.com/img/owners/pak-taufik/pak-taufik-1.jpg",
+        "link3": "https://portfolio.suba-arch.com/img/owners/Bu-Resi/Bu-Resi-1.jpg"
+    },
+    {
+        "id": "2",
+        "link1": "https://portfolio.suba-arch.com/img/owners/pak-yudith/pak-yudith-1.jpg",
+        "link2": "https://portfolio.suba-arch.com/img/owners/pak-taufik/pak-taufik-1.jpg",
+        "link3": "https://portfolio.suba-arch.com/img/owners/Bu-Resi/Bu-Resi-1.jpg"
+    }
+]
+}
