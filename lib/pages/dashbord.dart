@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -66,13 +65,15 @@ Container(
    child: Stack(children: [
     Container(
                 margin: EdgeInsets.all(10),
-                child: Text("Halaman",textAlign: TextAlign.start ,style:TextStyle(
+                child: 
+                FittedBox(child: Text("Halaman",textAlign: TextAlign.start ,style:TextStyle(
                 fontSize: 15,
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
                 fontFamily: 'Montserrat'
                 ),
-                )
+                ) ,)
+               
     ),
 
   Container(
@@ -82,7 +83,7 @@ Container(
                 mainAxisAlignment:MainAxisAlignment.start ,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text(" Referensi", textAlign: TextAlign.start,style: 
+                  FittedBox(child:   Text(" Referensi", textAlign: TextAlign.start,style: 
                TextStyle(
                 color: Colors.amber[400],
                 fontSize: 30, 
@@ -90,15 +91,17 @@ Container(
                 letterSpacing: 0,
                 height: 1,
                 fontFamily: 'Arial_Rounded'
-                ),),
-             Text(" Design Rumah", textAlign: TextAlign.start,style: 
+                ),), ),
+                
+                FittedBox(child:  Text(" Design Rumah", textAlign: TextAlign.start,style: 
                TextStyle(
                 fontSize: 30, 
                 fontWeight: FontWeight.bold,
                 letterSpacing: 0,
                 height: 1,
                 fontFamily: 'Arial_Rounded'
-                ),) 
+                ),) ,)
+            
                 ],
               )
              )
@@ -120,10 +123,8 @@ Container(
                   key: ValueKey(_item[index]["id"]),
                   margin: EdgeInsets.all(10),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      
-
-                      
                      Container(
                       child:Image.network(
               _item[index]['link1'],

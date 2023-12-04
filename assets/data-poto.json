@@ -11,6 +11,24 @@
         "link1": "https://portfolio.suba-arch.com/img/owners/pak-heryatna/pak-heryatna-1.jpg",
         "link2": "https://portfolio.suba-arch.com/img/owners/pak-taufik/pak-taufik-1.jpg",
         "link3": "https://portfolio.suba-arch.com/img/owners/pak-oky/pak-oky-1.jpg"
+    },
+    {
+        "id": "3",
+        "link1": "https://portfolio.suba-arch.com/img/owners/Bu-Rahayu/Bu-Rahayu%20(1).jpg",
+        "link2": "https://portfolio.suba-arch.com/img/owners/pak-faisal/pak-faisal-1.jpg",
+        "link3": "https://portfolio.suba-arch.com/img/owners/pak-gaurav/pak-gaurav-1.jpg"
+    },
+    {
+        "id": "4",
+        "link1": "https://portfolio.suba-arch.com/img/owners/pak-ernan/pak-ernan-1.jpg",
+        "link2": "https://portfolio.suba-arch.com/img/owners/Pak-Ridwan%20BA/Pak-Ridwan%20BA%20(1).jpg",
+        "link3": "https://portfolio.suba-arch.com/img/owners/Pak-Edwi/Pak-Edwi%20(1).jpg"
+    },
+    {
+        "id": "5",
+        "link1": "https://portfolio.suba-arch.com/img/owners/Pak-Ali-Yusuf/Pak-Ali-Yusuf%20(1).jpg",
+        "link2": "https://portfolio.suba-arch.com/img/owners/bu-orin/bu-orin.jpg",
+        "link3": "https://portfolio.suba-arch.com/img/owners/Bu%20Dewi/bu-dewi-1.jpg"
     }
 ]
 }
