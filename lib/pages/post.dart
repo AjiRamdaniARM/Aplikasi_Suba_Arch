@@ -30,9 +30,7 @@ class _PostWidgetState extends State<PostWidget> {
                 Text(widget.title,textAlign: TextAlign.center ,style: TextStyle(fontFamily: 'Arial_Rounded', fontSize: 20),),
                 Text(widget.subtitle)
               ],
-            )
-        
-            
+            )    
     )
     )
     )
